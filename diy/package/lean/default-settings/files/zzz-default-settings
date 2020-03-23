@@ -45,7 +45,7 @@ find /www -type f -exec chmod 644 {} \;
 find /www -type d -exec chmod 755 {} \;
 cp -R /www/cgi-bin/* /www/
 chmod +x /www/luci
-chmod +x /usr/share/aria2/tracker.sh
+chmod +x /usr/share/aria2/*.sh
 
 ln -sf /usr/bin/python3 /usr/bin/python
 ln -sf /usr/bin/python /usr/bin/py
