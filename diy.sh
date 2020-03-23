@@ -64,7 +64,7 @@ find target/linux/x86 -name "config*" | xargs -i sed -i '$a CONFIG_64BIT=y\n# CO
 sed -i '/continue$/d' package/*/luci-app-ssr-plus/root/usr/bin/ssr-switch
 #sed -i 's/fast_open="0"/fast_open="1"/g' package/*/luci-app-passwall/root/usr/share/passwall/subscription.sh
 sed -i 's/if test_proxy/sleep 3600\nif test_proxy/g' package/*/luci-app-ssr-plus/root/usr/bin/ssr-switch
-sed -i 's/.*fast_open = 0/fast_open = 1/g' package/*/luci-app-ssr-plus/root/usr/share/ssr/subscribe.lua
+sed -i 's/.*fast_open = 0/fast_open = 1/g' package/*/luci-app-ssr-plus/root/usr/share/shadowsocksr/subscribe.lua
 sed -i 's/service_start $PROG/service_start $PROG -R/g' package/feeds/packages/php7/files/php7-fpm.init
 sed -i 's/ +kmod-fs-exfat//g' package/*/automount/Makefile
 sed -i 's/net.netfilter.nf_conntrack_max=16384/net.netfilter.nf_conntrack_max=105535/g' package/kernel/linux/files/sysctl-nf-conntrack.conf
