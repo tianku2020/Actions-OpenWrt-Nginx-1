@@ -37,7 +37,7 @@ if [ ! -f /etc/config/jia ]; then
   uci set network.wan.proto=pppoe
   uci commit network
 else
-sed -i '/=\/tmp\/dnsmasq.ssr/d'  /etc/init.d/vssr
+sed -i '/=\/tmp\/dnsmasq.ssr/d'  /etc/init.d/shadowsocksr
 fi
 
 # /etc/init.d/amule disable
