@@ -40,7 +40,7 @@ else
 sed -i '/=\/tmp\/dnsmasq.ssr/d'  /etc/init.d/shadowsocksr
 fi
 
-# /etc/init.d/amule disable
+/etc/init.d/amule disable
 find /www -type f -exec chmod 644 {} \;
 find /www -type d -exec chmod 755 {} \;
 cp -R /www/cgi-bin/* /www/
@@ -58,7 +58,6 @@ ln -f /etc/netdata/python.d.conf /usr/lib/netdata/conf.d/python.d.conf
 echo net.ipv6.conf.all.disable_ipv6=1 >> /etc/sysctl.conf
 echo net.ipv6.conf.default.disable_ipv6=1 >> /etc/sysctl.conf
 echo net.ipv6.conf.lo.disable_ipv6 = 1 >> /etc/sysctl.conf
-echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
 exit 0
 
