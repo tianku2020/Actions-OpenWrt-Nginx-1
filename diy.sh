@@ -24,7 +24,7 @@ git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/jerrykuku/luci-theme-argon
 git clone https://github.com/pymumu/luci-app-smartdns
-# git clone https://github.com/LGA1150/openwrt-fullconenat
+git clone https://github.com/llccd/openwrt-fullconenat
 git clone https://github.com/lisaac/luci-app-diskman
 mkdir parted && cp luci-app-diskman/Parted.Makefile parted/Makefile
 # git clone https://github.com/mchome/luci-app-vlmcsd
