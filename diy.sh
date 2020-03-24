@@ -71,7 +71,7 @@ sed -i 's/net.netfilter.nf_conntrack_max=16384/net.netfilter.nf_conntrack_max=10
 wget -P package/network/config/firewall/patches/ https://github.com/coolsnowwolf/lede/raw/master/package/network/config/firewall/patches/fullconenat.patch
 sed -i "s/('Drop invalid packets'));/('Drop invalid packets'));\n o = s.option(form.Flag, 'fullcone', _('Enable FullCone NAT'));/g" \
 package/feeds/*/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js
-# sed -i "s/option forward		REJECT/option forward		REJECT\n	option fullcone	1/g" package/network/config/firewall/files/firewall.config
+sed -i "s/option forward		REJECT/option forward		REJECT\n	option fullcone	1/g" package/network/config/firewall/files/firewall.config
 sed -i "s/option bbr '0'/option bbr '1'/g" package/*/luci-app-flowoffload/root/etc/config/flowoffload
 # sed -i "s/include conf.d/index luci;\n include conf.d/g" package/feeds/*/nginx/files/_lan.conf
 sed -i 's/getElementById("cbid.amule.main/getElementById("widget.cbid.amule.main/g' package/lean/luci-app-amule/luasrc/view/amule/overview_status.htm
