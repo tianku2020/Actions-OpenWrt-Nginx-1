@@ -24,7 +24,6 @@ git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/jerrykuku/luci-theme-argon
 git clone https://github.com/pymumu/luci-app-smartdns
-git clone https://github.com/llccd/openwrt-fullconenat
 git clone https://github.com/lisaac/luci-app-diskman
 mkdir parted && cp luci-app-diskman/Parted.Makefile parted/Makefile
 # git clone https://github.com/mchome/luci-app-vlmcsd
@@ -96,4 +95,5 @@ package/feeds/*/ksmbd/ package/feeds/*/ksmbd-tools/ -maxdepth 2 -name "Makefile"
 sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' package/feeds/*/Makefile
 find package/feeds/*/ package/lean/ -maxdepth 3 ! -path "*shadowsocksr-libev*" -name "Makefile" ! -path "*rblibtorrent1*" -name "Makefile" \
 | xargs -i sed -i "s/PKG_SOURCE_VERSION:=[0-9a-z]\{15,\}/PKG_SOURCE_VERSION:=latest/g" {}
+find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/SUBDIRS=/M=/g" {}
 sed -i 's/$(VERSION) &&/$(VERSION) ;/g' include/download.mk
