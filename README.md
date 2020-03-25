@@ -2,7 +2,7 @@
 
 刚接触openwrt的新手勿用.
 
-openwrt官方master分支版本,Kernel 5.4,包含了主流插件以及针对国内环境做了必要的优化,只针对X86_64,其他设备请自行调整与编译,包含PHP,uhttpd换成了nginx,大大增加了可玩性,比如kodexplorer,webdav,反向代理等,可作为NAS使用.
+openwrt官方master分支版本,Kernel 5.4,包含了主流插件以及针对国内环境做了必要的优化,主要针对X86_64,其他设备请自行调整与编译,uhttpd换成了nginx,大大增加了可玩性,比如kodexplorer,webdav,反向代理等,可作为NAS使用.
 
 在[Releases](https://github.com/garypang13/Actions-OpenWrt-Snapshot/releases)下载已编译好的固件,周更.
 
