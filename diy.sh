@@ -39,14 +39,15 @@ svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
 svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/KFERMercer/openwrt-adguardhome
+git clone https://github.com/garypang13/luci-app-kodexplorer
 cd -
 
 cp -Rf ../diy/* ./
 sed -i 's/root\/.aria2/usr\/share\/aria2/g' files/usr/share/aria2/aria2.conf
 sed -i 's/root\/Download/data\/download\/aria2/g' files/usr/share/aria2/*
 sed -i 's/+uhttpd //g' feeds/luci/collections/luci/Makefile
-#rm -Rf package/feeds/packages/haproxy/files/haproxy.init
-#sed -i 's/conf.$section/conf/g' package/feeds/packages/aria2/files/aria2.init
+sed -i '/_redirect2ssl/d' package/feeds/*/nginx/Makefile
+sed -i '/init_lan/d' package/feeds/*/nginx/files/nginx.init
 sed -i "s/sed '\/^$\/d' \"\$config_file_tmp\" >\"\$config_file\"/cd \/usr\/share\/aria2 \&\& .\/tracker.sh\ncat \/usr\/share\/aria2\/aria2.conf > \"\$config_file\"\n\
 echo '' >> \"\$config_file\"\nsed '\/^$\/d' \"\$config_file_tmp\" >> \"\$config_file\"/g" package/feeds/packages/aria2/files/aria2.init
 sed -i 's/runasuser "$config_dir"/runasuser "$config_dir"\nwget -P "$config_dir" -O "$config_dir\/nodes.dat" \
