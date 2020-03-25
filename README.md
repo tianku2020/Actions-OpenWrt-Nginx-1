@@ -1,4 +1,4 @@
-# Actions OpenWrt Snapshot
+# Actions OpenWrt Snapshot With Nginx
 
 刚接触openwrt的新手勿用.
 
