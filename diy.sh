@@ -6,6 +6,7 @@ svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean package/l
 rm -Rf package/lean/qBittorrent/patches
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github.com\/c0re100\/qBittorrent-Enhanced-Edition/g' package/lean/qBittorrent/Makefile
 sed -i 's/PKG_HASH.*/PKG_SOURCE_PROTO:=git\nPKG_SOURCE_VERSION:=latest/g' package/lean/qBittorrent/Makefile
+sed -i '/PKG_BUILD_DIR/d' package/lean/qBittorrent/Makefile
 sed -i 's/+python$/+python3/g' package/lean/luci-app-qbittorrent/Makefile
 rm -Rf package/feeds/packages/php7
 svn co https://github.com/openwrt/packages/branches/openwrt-19.07/lang/php7 package/feeds/packages/php7
