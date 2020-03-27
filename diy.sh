@@ -73,7 +73,6 @@ sed -i "s/option bbr '0'/option bbr '1'/g" package/*/luci-app-flowoffload/root/e
 # sed -i "s/include conf.d/index luci;\n include conf.d/g" package/feeds/*/nginx/files/_lan.conf
 sed -i 's/getElementById("cbid.amule.main/getElementById("widget.cbid.amule.main/g' package/lean/luci-app-amule/luasrc/view/amule/overview_status.htm
 sed -i 's/main.extra_settings=""/main.extra_settings="dht-file-path=\/usr\/share\/aria2\/dht.dat"/g' package/feeds/*/luci-app-aria2/root/etc/uci-defaults/40_luci-aria2
-sed -i "s/DEFAULT_PACKAGES:=/DEFAULT_PACKAGES:=luci luci-base /g"
 getversion(){
 if !(basename $(curl -Ls -o /dev/null -w %{url_effective} https://github.com/$1/releases/latest) | grep -o -E "[0-9.]+")
 then
@@ -96,3 +95,4 @@ find package/feeds/*/ package/lean/ -maxdepth 3 ! -path "*shadowsocksr-libev*" -
 | xargs -i sed -i "s/PKG_SOURCE_VERSION:=[0-9a-z]\{15,\}/PKG_SOURCE_VERSION:=latest/g" {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/SUBDIRS=/M=/g" {}
 sed -i 's/$(VERSION) &&/$(VERSION) ;/g' include/download.mk
+sed -i "s/DEFAULT_PACKAGES:=/DEFAULT_PACKAGES:=luci luci-base /g" include/target.mk
