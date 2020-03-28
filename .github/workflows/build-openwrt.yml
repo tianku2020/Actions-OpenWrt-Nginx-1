@@ -31,7 +31,7 @@ env:
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -92,7 +92,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make IGNORE_ERRORS=m -j1 V=s
+        make -j$(nproc) || make -j1 V=s
         echo "::set-output name=status::success"
 
     - name: Upload bin directory
