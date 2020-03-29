@@ -48,6 +48,9 @@ jobs:
         
     - name: SSH connection to Actions
       uses: P3TERX/debugger-action@master
+
+    - name: Clone source code
+      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
       
     - name: Free up disk space
       if: env.FREE_UP_DISK == 'true'
@@ -59,16 +62,11 @@ jobs:
         sudo -E apt-get -q purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
-        sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/hostpkg /mnt/openwrt/dl /mnt/openwrt/feeds /mnt/openwrt/staging_dir
-        ln -s /mnt/openwrt/bin openwrt/bin
-        ln -s /mnt/openwrt/build_dir/host openwrt/build_dir/host
+        sudo mkdir -p -m 777 /mnt/openwrt/build_dir/hostpkg /mnt/openwrt/build_dir/host /mnt/openwrt/dl /mnt/openwrt/feeds /mnt/openwrt/staging_dir
         ln -s /mnt/openwrt/build_dir/hostpkg openwrt/build_dir/hostpkg
+        ln -s /mnt/openwrt/build_dir/host openwrt/build_dir/host
         ln -s /mnt/openwrt/dl openwrt/dl
-        ln -s /mnt/openwrt/feeds openwrt/feeds
         ln -s /mnt/openwrt/staging_dir openwrt/staging_dir
-
-    - name: Clone source code
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
