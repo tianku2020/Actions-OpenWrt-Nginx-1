@@ -17,7 +17,6 @@ rm -Rf package/lean/antileech/src/*
 git clone https://github.com/persmule/amule-dlp.antiLeech package/lean/antileech/src
 
 cd package/feeds
-#git clone https://github.com/Lienol/openwrt-package
 git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/jerrykuku/luci-theme-argon
@@ -34,7 +33,7 @@ git clone https://github.com/destan19/OpenAppFilter
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
 svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
 git clone https://github.com/KFERMercer/openwrt-adguardhome
-git clone https://github.com/garypang13/luci-app-kodexplorer
+git clone https://github.com/garypang13/luci-app-php-kodexplorer
 cd -
 
 cp -Rf ../diy/* ./
