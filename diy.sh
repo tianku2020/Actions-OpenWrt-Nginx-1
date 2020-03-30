@@ -1,7 +1,7 @@
 #!/bin/bash
 #=================================================
 git clone https://github.com/falafalafala1668/OpenWrt-UEFI-Support.git
-./OpenWrt-UEFI-Support/RunMe.sh apply
+# ./OpenWrt-UEFI-Support/RunMe.sh apply
 svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean && svn revert -R package/lean
 rm -Rf package/lean/qBittorrent/patches
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github.com\/c0re100\/qBittorrent-Enhanced-Edition/g' package/lean/qBittorrent/Makefile
