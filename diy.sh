@@ -94,4 +94,3 @@ sed -i 's/PKG_BUILD_DIR:=/PKG_BUILD_DIR?=/g' feeds/luci/luci.mk
 find package/feeds/*/ package/lean/ -maxdepth 3 -d -name "zh-cn" | xargs -i rename -v 's/zh-cn/zh_Hans/' {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "/bin\/upx/d" {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "/po2lmo .\/po/d" {}
-rm -Rf package/feeds/packages/glib2
