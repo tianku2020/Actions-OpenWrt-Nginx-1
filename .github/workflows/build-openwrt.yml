@@ -18,10 +18,10 @@ on:
     types: started
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   CONFIG_FILE: X86_64.config
-  DIY_SH: diy.sh
+  DIY_SH: diy.sh1
   FREE_UP_DISK: true
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
