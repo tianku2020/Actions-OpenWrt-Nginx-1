@@ -36,7 +36,6 @@ git clone https://github.com/garypang13/luci-app-php-kodexplorer
 cd -
 
 cp -Rf ../diy/* ./
-sed -i 's/$(INCLUDE_DIR)\/package.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' package/feeds/luci-app-adguardhome/Makefile
 sed -i 's/root\/.aria2/usr\/share\/aria2/g' files/usr/share/aria2/aria2.conf
 sed -i 's/root\/Download/data\/download\/aria2/g' files/usr/share/aria2/*
 sed -i 's/+uhttpd //g' feeds/luci/collections/luci/Makefile
