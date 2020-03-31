@@ -95,7 +95,7 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(($(nproc)+1)) thread compile"
-        make -j$(($(nproc)+1)) || make IGNORE_ERRORS=1 -j1 V=s >errors.log
+        make -j$(($(nproc)+1)) || make -k -j1 V=s >errors.log
         echo "::set-output name=status::success"
 
     - name: Upload bin directory
@@ -111,6 +111,7 @@ jobs:
       run: |
         mkdir firmware && find openwrt/bin/targets/*/*/* -maxdepth 0 -name "*uefi-gpt*" -or -name "*combined*" -or -name "*.vmdk" -or -name "sha256sums" | xargs -i mv -f {} ./firmware/
         mv openwrt/.config  ./firmware/config.txt
+        mv openwrt/errors.log  ./firmware/errors.log
         cd firmware
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
