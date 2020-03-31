@@ -91,7 +91,7 @@ find package/feeds/*/ package/lean/ -maxdepth 3 ! -path "*shadowsocksr-libev*" -
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/SUBDIRS=/M=/g" {}
 sed -i 's/$(VERSION) &&/$(VERSION) ;/g' include/download.mk
 sed -i 's/PKG_BUILD_DIR:=/PKG_BUILD_DIR?=/g' feeds/luci/luci.mk
-find package/feeds/*/ package/lean/ -maxdepth 3 -path "*luci-app*" -name "Makefile"  | xargs -i sed -i sed -i 's/$(INCLUDE_DIR)\/package.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
+find package/feeds/*/ package/lean/ -maxdepth 3 -path "*luci-app*" -name "Makefile" | xargs -i sed -i sed -i 's/$(INCLUDE_DIR)\/package.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -d -name "zh-cn" | xargs -i rename -v 's/zh-cn/zh_Hans/' {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "/bin\/upx/d" {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/po\/zh-cn/po\/zh_Hans/g" {}
