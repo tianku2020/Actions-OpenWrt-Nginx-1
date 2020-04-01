@@ -95,3 +95,4 @@ find package/feeds/*/ package/lean/ -maxdepth 3 -path "*luci-app*" -name "Makefi
 find package/feeds/*/ package/lean/ -maxdepth 3 -d -name "zh-cn" | xargs -i rename -v 's/zh-cn/zh_Hans/' {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "/bin\/upx/d" {}
 find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/po\/zh-cn/po\/zh_Hans/g" {}
+find package/feeds/*/ package/lean/ -maxdepth 3 -name "Makefile" | xargs -i sed -i "s/\+luci //g" {}
