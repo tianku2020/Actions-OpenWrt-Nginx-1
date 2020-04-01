@@ -47,7 +47,7 @@ echo '' >> \"\$config_file\"\nsed '\/^$\/d' \"\$config_file_tmp\" >> \"\$config_
 sed -i 's/runasuser "$config_dir"/runasuser "$config_dir"\nwget -P "$config_dir" -O "$config_dir\/nodes.dat" \
 http:\/\/upd.emule-security.org\/nodes.dat/g' package/*/luci-app-amule/root/etc/init.d/amule
 sed -i '$a /etc/smartdns' package/base-files/files/lib/upgrade/keep.d/base-files-essential
-sed -i '$a /www/nas' package/base-files/files/lib/upgrade/keep.d/base-files-essential
+sed -i '$a /www/kod/config/setting_user.php' package/base-files/files/lib/upgrade/keep.d/base-files-essential
 sed -i '$a /etc/qBittorrent' package/base-files/files/lib/upgrade/keep.d/base-files-essential
 sed -i '$a /root/amule' package/base-files/files/lib/upgrade/keep.d/base-files-essential
 sed -i '$a /etc/amule' package/base-files/files/lib/upgrade/keep.d/base-files-essential
