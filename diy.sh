@@ -26,6 +26,7 @@ git clone https://github.com/brvphoenix/wrtbwmon
 git clone https://github.com/destan19/OpenAppFilter
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
 svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
+git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/KFERMercer/openwrt-adguardhome
 git clone https://github.com/garypang13/luci-app-php-kodexplorer
 git clone https://github.com/garypang13/luci-app-eqos
