@@ -1,7 +1,5 @@
 #!/bin/bash
 #=================================================
-# git clone https://github.com/falafalafala1668/OpenWrt-UEFI-Support.git
-# ./OpenWrt-UEFI-Support/RunMe.sh apply
 svn co --force https://github.com/coolsnowwolf/lede/trunk/package/lean package/lean && svn revert -R package/lean
 rm -Rf package/lean/qBittorrent/patches
 sed -i 's/PKG_SOURCE_URL:=.*/PKG_SOURCE_URL:=https:\/\/github.com\/c0re100\/qBittorrent-Enhanced-Edition/g' package/lean/qBittorrent/Makefile
@@ -22,9 +20,6 @@ git clone https://github.com/jerrykuku/luci-theme-argon
 git clone https://github.com/pymumu/luci-app-smartdns
 git clone https://github.com/lisaac/luci-app-diskman
 mkdir parted && cp luci-app-diskman/Parted.Makefile parted/Makefile
-# git clone https://github.com/mchome/luci-app-vlmcsd
-# git clone https://github.com/mchome/openwrt-vlmcsd vlmcsd
-# git clone https://github.com/KFERMercer/openwrt-v2ray v2ray
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 git clone https://github.com/brvphoenix/wrtbwmon
@@ -55,7 +50,6 @@ sed -i '$a /etc/aria2' package/base-files/files/lib/upgrade/keep.d/base-files-es
 find target/linux/x86 -name "config*" | xargs -i sed -i '$a CONFIG_64BIT=y\n# CONFIG_WLAN is not set\n# CONFIG_WIRELESS is not set\
 \nCONFIG_NETFILTER=y\nCONFIG_NETFILTER_XTABLES=y\nCONFIG_NETFILTER_XT_MATCH_STRING=y\nCONFIG_HWMON=y\nCONFIG_SENSORS_CORETEMP=y' {}
 sed -i '/continue$/d' package/*/luci-app-ssr-plus/root/usr/bin/ssr-switch
-#sed -i 's/fast_open="0"/fast_open="1"/g' package/*/luci-app-passwall/root/usr/share/passwall/subscription.sh
 sed -i 's/if test_proxy/sleep 3600\nif test_proxy/g' package/*/luci-app-ssr-plus/root/usr/bin/ssr-switch
 sed -i 's/ uci.cursor/ luci.model.uci.cursor/g' package/*/luci-app-ssr-plus/root/usr/share/shadowsocksr/subscribe.lua
 sed -i 's/service_start $PROG/service_start $PROG -R/g' package/feeds/packages/php7/files/php7-fpm.init
@@ -66,7 +60,6 @@ sed -i "s/('Drop invalid packets'));/('Drop invalid packets'));\n o = s.option(f
 package/feeds/*/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js
 sed -i "s/option forward		REJECT/option forward		REJECT\n	option fullcone	1/g" package/network/config/firewall/files/firewall.config
 sed -i "s/option bbr '0'/option bbr '1'/g" package/*/luci-app-flowoffload/root/etc/config/flowoffload
-# sed -i "s/include conf.d/index luci;\n include conf.d/g" package/feeds/*/nginx/files/_lan.conf
 sed -i 's/getElementById("cbid.amule.main/getElementById("widget.cbid.amule.main/g' package/lean/luci-app-amule/luasrc/view/amule/overview_status.htm
 sed -i 's/main.extra_settings=""/main.extra_settings="dht-file-path=\/usr\/share\/aria2\/dht.dat"/g' package/feeds/*/luci-app-aria2/root/etc/uci-defaults/40_luci-aria2
 getversion(){
