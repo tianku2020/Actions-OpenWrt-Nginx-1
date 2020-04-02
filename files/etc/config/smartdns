@@ -3,6 +3,7 @@ config smartdns
 	option server_name 'smartdns'
 	option tcp_server '1'
 	option ipv6_server '0'
+	option port '5555'
 	option dualstack_ip_selection '0'
 	option prefetch_domain '1'
 	option coredump '0'
